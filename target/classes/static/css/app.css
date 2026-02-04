@@ -1,0 +1,140 @@
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #1f2a37;
+  --muted: #6b7280;
+  --border: #dbe1ea;
+  --primary: #1e5aa8;
+  --primary-dark: #184a8a;
+  --accent: #0f7ad1;
+  --danger: #b91c1c;
+  --success: #15803d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #eef2f7 0%, var(--bg) 100%);
+}
+
+.container {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 24px 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+h2, h3 {
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+p {
+  color: var(--text);
+}
+
+label {
+  display: inline-block;
+  min-width: 140px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+input, select {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  width: 260px;
+  max-width: 100%;
+}
+
+button {
+  padding: 8px 14px;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button.secondary {
+  border-color: var(--border);
+  background: #f8fafc;
+  color: var(--text);
+}
+
+button.danger {
+  border-color: var(--danger);
+  background: var(--danger);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+table th, table td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background: #f1f5f9;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+nav {
+  margin-top: 18px;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.notice {
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e3a8a;
+  margin-top: 12px;
+}
+
+.error {
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #7f1d1d;
+  margin-top: 12px;
+}
+
+.form-row {
+  margin-bottom: 12px;
+}
+
+.actions {
+  margin-top: 12px;
+}

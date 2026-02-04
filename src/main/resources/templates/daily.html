@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Attendance</title>
+  <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<div th:replace="fragments :: header('Daily')"></div>
+<div class="container">
+  <h2>Daily Attendance</h2>
+  <form th:action="@{/attendances/daily}" method="get">
+    <div class="form-row">
+      <label>Date</label>
+      <input type="date" name="date" th:value="${date}" />
+      <button type="submit">Search</button>
+    </div>
+  </form>
+
+  <div th:if="${attendance == null}">
+    <p>No record for the day.</p>
+  </div>
+  <div th:if="${attendance != null}">
+    <p th:text="|Start: ${#temporals.format(attendance.startTime, 'yyyy/MM/dd HH:mm')}|">Start</p>
+    <p th:text="|End: ${attendance.endTime == null ? '-' : #temporals.format(attendance.endTime, 'yyyy/MM/dd HH:mm')}|">End</p>
+    <p th:text="|Break Minutes: ${attendance.breakMinutes == 0 ? '-' : attendance.breakMinutes}|">Break Minutes</p>
+    <p th:text="|Working Minutes (Net): ${attendance.workingMinutes}|">Working Minutes</p>
+    <p class="notice" th:if="${attendance.breakMinutes == 60}">Break 60 minutes deducted automatically (6h+ rule).</p>
+  </div>
+
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>
