@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Error</title>
+  <title>エラー</title>
   <link rel="stylesheet" th:href="@{/css/app.css}">
 </head>
 <body>
 <div th:replace="fragments :: header('Error')"></div>
 <div class="container">
-  <h2>Error</h2>
+  <h2>エラー</h2>
   <p class="error" th:text="${errorMessage}">Something went wrong.</p>
 </div>
 <div th:replace="fragments :: footer"></div>

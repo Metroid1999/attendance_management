@@ -2,27 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>ログイン</title>
   <link rel="stylesheet" th:href="@{/css/app.css}">
 </head>
 <body>
 <div class="container">
-  <h2>Login</h2>
+  <h2>ログイン</h2>
   <form th:action="@{/login}" method="post">
     <div class="form-row">
-      <label>Email</label>
+      <label>メールアドレス</label>
       <input type="text" name="username" />
     </div>
     <div class="form-row">
-      <label>Password</label>
+      <label>パスワード</label>
       <input type="password" name="password" />
     </div>
     <div class="actions">
-      <button type="submit">Login</button>
+      <button type="submit">ログイン</button>
     </div>
   </form>
-  <p class="notice" th:if="${param.logout}">You have been logged out.</p>
-  <p class="error" th:if="${param.error}">Invalid credentials.</p>
+  <p class="notice" th:if="${param.logout}">ログアウトしました。</p>
+  <p class="error" th:if="${param.error}">メールアドレスまたはパスワードが正しくありません。</p>
 </div>
 </body>
 </html>

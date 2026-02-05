@@ -2,22 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Correction Requests (Admin)</title>
+  <title>修正申請（管理者）</title>
   <link rel="stylesheet" th:href="@{/css/app.css}">
 </head>
 <body>
 <div th:replace="fragments :: header('Admin Corrections')"></div>
 <div class="container">
-  <h2>Correction Requests (Admin)</h2>
+  <h2>修正申請（管理者）</h2>
   <table>
     <thead>
     <tr>
-      <th>User</th>
-      <th>Date</th>
-      <th>Requested Start</th>
-      <th>Requested End</th>
-      <th>Status</th>
-      <th>Action</th>
+      <th>ユーザー</th>
+      <th>勤務日</th>
+      <th>申請出勤</th>
+      <th>申請退勤</th>
+      <th>状態</th>
+      <th>操作</th>
     </tr>
     </thead>
     <tbody>
@@ -30,12 +30,12 @@
       <td>
         <form th:if="${r.status.name() == 'PENDING'}" th:action="@{/admin/corrections/approve}" method="post" style="display:inline;">
           <input type="hidden" name="requestId" th:value="${r.id}" />
-          <button type="submit">Approve</button>
-        </form>
-        <form th:if="${r.status.name() == 'PENDING'}" th:action="@{/admin/corrections/reject}" method="post" style="display:inline;">
-          <input type="hidden" name="requestId" th:value="${r.id}" />
-          <button type="submit" class="danger">Reject</button>
-        </form>
+        <button type="submit">承認</button>
+      </form>
+      <form th:if="${r.status.name() == 'PENDING'}" th:action="@{/admin/corrections/reject}" method="post" style="display:inline;">
+        <input type="hidden" name="requestId" th:value="${r.id}" />
+        <button type="submit" class="danger">却下</button>
+      </form>
       </td>
     </tr>
     </tbody>

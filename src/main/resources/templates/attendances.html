@@ -2,31 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Attendance</title>
+  <title>勤怠打刻</title>
   <link rel="stylesheet" th:href="@{/css/app.css}">
 </head>
 <body>
 <div th:replace="fragments :: header('Today')"></div>
 <div class="container">
-  <h2>Today's Attendance</h2>
-  <p th:text="|Date: ${#temporals.format(today, 'yyyy/MM/dd')}|">Date</p>
+  <h2>本日の勤怠</h2>
+  <p th:text="|日付: ${#temporals.format(today, 'yyyy/MM/dd')}|">Date</p>
 
   <div th:if="${attendance == null}">
-    <p>Status: Not started</p>
+    <p>状態: 未打刻</p>
     <form th:action="@{/attendances/start}" method="post">
-      <button type="submit">Clock In</button>
+      <button type="submit">出勤打刻</button>
     </form>
   </div>
 
   <div th:if="${attendance != null}">
-    <p th:text="|Start: ${#temporals.format(attendance.startTime, 'yyyy/MM/dd HH:mm')}|">Start</p>
-    <p th:text="|End: ${attendance.endTime == null ? '-' : #temporals.format(attendance.endTime, 'yyyy/MM/dd HH:mm')}|">End</p>
-    <p th:text="|Break Minutes: ${attendance.breakMinutes == 0 ? '-' : attendance.breakMinutes}|">Break Minutes</p>
-    <p th:text="|Working Minutes (Net): ${attendance.workingMinutes}|">Working Minutes</p>
-    <p class="notice" th:if="${attendance.breakMinutes == 60}">Break 60 minutes deducted automatically (6h+ rule).</p>
+    <p th:text="|出勤: ${#temporals.format(attendance.startTime, 'yyyy/MM/dd HH:mm')}|">Start</p>
+    <p th:text="|退勤: ${attendance.endTime == null ? '-' : #temporals.format(attendance.endTime, 'yyyy/MM/dd HH:mm')}|">End</p>
+    <p th:text="|休憩（分）: ${attendance.breakMinutes == 0 ? '-' : attendance.breakMinutes}|">Break Minutes</p>
+    <p th:text="|勤務時間（分・控除後）: ${attendance.workingMinutes}|">Working Minutes</p>
+    <p class="notice" th:if="${attendance.breakMinutes == 60}">6時間以上のため休憩60分を自動控除しました。</p>
     <div th:if="${attendance.endTime == null}">
       <form th:action="@{/attendances/end}" method="post">
-        <button type="submit">Clock Out</button>
+        <button type="submit">退勤打刻</button>
       </form>
     </div>
   </div>

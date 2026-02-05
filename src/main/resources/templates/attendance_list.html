@@ -2,30 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Monthly Attendance</title>
+  <title>月次勤怠</title>
   <link rel="stylesheet" th:href="@{/css/app.css}">
 </head>
 <body>
 <div th:replace="fragments :: header('Monthly')"></div>
 <div class="container">
-  <h2>Monthly Attendance</h2>
+  <h2>月次勤怠</h2>
   <form th:action="@{/attendances/month}" method="get">
     <div class="form-row">
-      <label>Year</label>
+      <label>年</label>
       <input type="number" name="year" th:value="${targetMonth.year}" />
-      <label>Month</label>
+      <label>月</label>
       <input type="number" name="month" min="1" max="12" th:value="${targetMonth.monthValue}" />
-      <button type="submit">Search</button>
+      <button type="submit">検索</button>
     </div>
   </form>
 
   <table>
     <thead>
     <tr>
-      <th>Date</th>
-      <th>Start</th>
-      <th>End</th>
-      <th>Working Minutes</th>
+      <th>日付</th>
+      <th>出勤</th>
+      <th>退勤</th>
+      <th>勤務時間</th>
     </tr>
     </thead>
     <tbody>
@@ -33,7 +33,7 @@
       <td th:text="${#temporals.format(a.workDate, 'yyyy/MM/dd')}">Date</td>
       <td th:text="${#temporals.format(a.startTime, 'yyyy/MM/dd HH:mm')}">Start</td>
       <td th:text="${a.endTime == null ? '-' : #temporals.format(a.endTime, 'yyyy/MM/dd HH:mm')}">End</td>
-      <td th:text="|${a.workingMinutes} (break: ${a.breakMinutes})|">Minutes</td>
+      <td th:text="|${a.workingMinutes}（休憩: ${a.breakMinutes}）|">Minutes</td>
     </tr>
     </tbody>
   </table>

@@ -7,16 +7,16 @@
       <h2 th:text="${title}">Title</h2>
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end;">
         <span class="notice" style="margin:0;" sec:authorize="isAuthenticated()">
-          User: <strong sec:authentication="name">user@example.com</strong>
+          ログイン中: <strong sec:authentication="name">user@example.com</strong>
         </span>
-        <a th:href="@{/attendances}">Home</a>
-        <a th:href="@{/attendances/daily}">Daily</a>
-        <a th:href="@{/attendances/month}">Monthly</a>
-        <a th:href="@{/corrections}">Corrections</a>
-        <a th:href="@{/admin/corrections}" sec:authorize="hasRole('ADMIN')">Admin</a>
+        <a th:href="@{/attendances}">ホーム</a>
+        <a th:href="@{/attendances/daily}">日次</a>
+        <a th:href="@{/attendances/month}">月次</a>
+        <a th:href="@{/corrections}">修正申請</a>
+        <a th:href="@{/admin/corrections}" sec:authorize="hasRole('ADMIN')">管理</a>
         <form th:action="@{/logout}" method="post" style="display:inline;margin:0;">
           <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-          <button type="submit" class="secondary">Logout</button>
+          <button type="submit" class="secondary">ログアウト</button>
         </form>
       </div>
     </div>
@@ -24,7 +24,7 @@
 </div>
 <div th:fragment="footer">
   <div class="container">
-    <p style="color:var(--muted);margin:0;">Attendance Management System</p>
+    <p style="color:var(--muted);margin:0;">勤怠管理システム</p>
   </div>
 </div>
 </body>
