@@ -104,7 +104,7 @@ erDiagram
 
 ## デプロイ
 デプロイURLは次のとおり。
-`https://quixotic-shayne-nontitle-674954ce.koyeb.app/login`
+<https://quixotic-shayne-nontitle-674954ce.koyeb.app/login>
 
 ### 注意点
 - 現在のDBは **H2メモリ** のため、再起動でデータが消えます。
