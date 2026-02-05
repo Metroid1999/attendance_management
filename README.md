@@ -1,4 +1,4 @@
-# 勤怠管理Webアプリ（就活向けサンプル）
+# 勤怠管理Webアプリ
 
 Java/Spring Bootを用いたログイン機能付きの勤怠管理Webアプリです。通常ユーザーは自分の勤怠を管理し、管理者は修正申請を承認できます。業務ルールをService層に集約し、Controller/Service/Repositoryの分離を徹底しています。
 
@@ -85,7 +85,7 @@ erDiagram
 ## 起動方法
 1. ルートへ移動
    ```bash
-   cd /Users/33kon/Desktop/Projects/attendance_management
+   cd /Users/xxx/Desktop/Projects/attendance_management
    ```
 2. 起動
    ```bash
@@ -102,12 +102,12 @@ erDiagram
 - `http://localhost:8080/h2-console`
 - JDBC URL: `jdbc:h2:mem:attendance_db`
 
-## デプロイ（就活向け・最短）
+## デプロイ
 デプロイURLは次のとおり。
 `https://quixotic-shayne-nontitle-674954ce.koyeb.app/login`
 
 ### 注意点
-- 現在のDBは **H2メモリ** のため、再起動でデータが消えます（就活デモ用途なら問題ありません）。
+- 現在のDBは **H2メモリ** のため、再起動でデータが消えます。
 - クラウド環境に合わせるため `server.port=${PORT:8080}` を設定済みです。
 
 ## 設計ポイント（アピール）
