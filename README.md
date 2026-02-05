@@ -103,7 +103,8 @@ erDiagram
 - JDBC URL: `jdbc:h2:mem:attendance_db`
 
 ## デプロイ（就活向け・最短）
-一番簡単なのは **Railway に GitHub 連携でデプロイ**する方法です。デプロイ後に公開URLを生成でき、メールで共有できます。citeturn0search0turn0search1
+デプロイURLは次のとおり。
+`https://quixotic-shayne-nontitle-674954ce.koyeb.app/login`
 
 ### 手順
 1. GitHub に Push
