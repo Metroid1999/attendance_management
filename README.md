@@ -106,12 +106,6 @@ erDiagram
 デプロイURLは次のとおり。
 `https://quixotic-shayne-nontitle-674954ce.koyeb.app/login`
 
-### 手順
-1. GitHub に Push
-2. Railway で新規プロジェクト作成 → **Deploy from GitHub repo** を選択
-3. デプロイ完了後、Settings → Networking で **Generate Domain** を押して公開URLを発行
-4. そのURLをメールで共有citeturn0search0turn0search1
-
 ### 注意点
 - 現在のDBは **H2メモリ** のため、再起動でデータが消えます（就活デモ用途なら問題ありません）。
 - クラウド環境に合わせるため `server.port=${PORT:8080}` を設定済みです。
